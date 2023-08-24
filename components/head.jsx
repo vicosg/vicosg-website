@@ -1,10 +1,10 @@
 import NextHead from 'next/head'
 import { string } from 'prop-types'
 
-const defaultDescription = 'Vicosg - Coach Online'
-const defaultKeywords = 'Vicosg - Coach Online'
+const defaultDescription = 'VICOSG - Coach Online'
+const defaultKeywords = 'Coach Online, Coaching, Health, 20 Years of experience, Gym'
 const defaultOGURL = 'https://vicosgcoach.com/'
-const defaultOGImage = ''
+const defaultOGImage = 'https://ik.imagekit.io/rjqvc4qwy/VICOSG-OgImage.png?updatedAt=1692859496286'
 
 
 const Head = (props) => {
@@ -25,7 +25,7 @@ const Head = (props) => {
     {/* Open Graph / Social Media Meta Tags */}
     <meta property="og:url" content={props.url || defaultOGURL} />
     <meta property="og:title" content={props.title || ''} />
-    <meta property="og:description" content="Vicosg Coach Online" />
+    <meta property="og:description" content="VICOSG Coach Online" />
     <meta property="og:image" content={props.ogImage || defaultOGImage} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
@@ -34,8 +34,8 @@ const Head = (props) => {
     <meta name="twitter:site" content={props.url || defaultOGURL} />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:image" content={props.ogImage || defaultOGImage} />
-    <meta name="twitter:title" content="Vicosg Coach Online" />
-    <meta name="twitter:description" content="Vicosg Coach Online" />
+    <meta name="twitter:title" content="VICOSG Coach Online" />
+    <meta name="twitter:description" content="VICOSG Coach Online" />
   </NextHead>
 }
 

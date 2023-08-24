@@ -3,7 +3,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 ## Getting Started
 Este es un proyecto creado por Gluonico. Basándonos en arquitecturas Jamstack, usando Next.JS para generación de aplicación SSR y generar contenido estático usando CMS Headless para almacenamiento de contenido. Esta aplicación está alojada en Vercel.
 
-Para GO! EZ Rentals
+Para Vicosg Coach
 
 npm install
 
