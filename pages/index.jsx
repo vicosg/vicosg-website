@@ -3,7 +3,7 @@ import React from "react";
 // Components Importations Section 
 import Head from "../components/head";
 import NavBar from "../components/navbar";
-// import HomeSection from '../components/sections/homeSection';
+import HomeSection from '../components/sections/homeSection';
 import ConstructionPage from "./construction";
 
 import Prismic from 'prismic-javascript'
@@ -22,7 +22,7 @@ const Homepage = props => {
             url={seo.data.default_url}
             ogImage={seo.data.default_image}
           />
-          {/* <NavBar
+          <NavBar
               content={menuContent.data.menu_links} 
               logo={generalInformation.data.small_logo.url}
               imageWidth={generalInformation.data.small_logo_width}
@@ -30,7 +30,12 @@ const Homepage = props => {
               locales={locales}
               actualLocale={actualLocale}
               sloganText={homeContent.data.slogan_text}
-            /> */}
+            />
+            <HomeSection
+              backgroundUrl={homeContent.data.background_image.url}
+              topText={homeContent.data.top_text}
+              bottomText={homeContent.data.bottom_text}
+              sloganText={homeContent.data.slogan_text}/>
             <ConstructionPage/>
         </div>
 }
@@ -41,9 +46,9 @@ const getStaticProps = async ({ params, locale, previewData }) => {
   return {
       props: {
         seo: await getPrismicData('seo', locale),
-        // generalInformation: await getPrismicData('general_information', locale),
-        // menuContent: await getPrismicData('menu', locale),
-        // homeContent: await getPrismicData('home_section',locale),
+        generalInformation: await getPrismicData('general_information', locale),
+        menuContent: await getPrismicData('menu', locale),
+        homeContent: await getPrismicData('home_section',locale),
         locales: locales,
         actualLocale: locale
       }
