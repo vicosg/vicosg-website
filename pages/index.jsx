@@ -5,6 +5,7 @@ import Head from "../components/head";
 import NavBar from "../components/navbar";
 import HomeSection from '../components/sections/homeSection';
 import ConstructionPage from "./construction";
+import FooterSection from "../components/sections/footerSection";
 
 import Prismic from 'prismic-javascript'
 import { PrismicClient } from '../prismic-configuration'
@@ -35,8 +36,21 @@ const Homepage = props => {
               backgroundUrl={homeContent.data.background_image.url}
               topText={homeContent.data.top_text}
               bottomText={homeContent.data.bottom_text}
-              sloganText={homeContent.data.slogan_text}/>
-            <ConstructionPage/>
+              sloganText={homeContent.data.slogan_text}
+              logo={generalInformation.data.small_logo.url}
+              imageWidth={generalInformation.data.small_logo_width}
+              imageHeight={generalInformation.data.small_logo_height}
+            />
+            {/* <ConstructionPage/> */}
+
+            <FooterSection
+              backgroundUrl={homeContent.data.background_image.url}
+              topText={homeContent.data.top_text}
+              bottomText={homeContent.data.bottom_text}
+              sloganText={homeContent.data.slogan_text}
+              logo={generalInformation.data.small_logo.url}
+              imageWidth={generalInformation.data.small_logo_width}
+              imageHeight={generalInformation.data.small_logo_height}/>
         </div>
 }
 

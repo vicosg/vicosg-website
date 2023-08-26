@@ -42,7 +42,7 @@ const NavBar = props => {
         navBarLinks.push(
           <li className="" key = {index}>
               <PrismicNextLink href={`${element.link}`}>
-                <div className="text-3xl text-white text-white hover:text-blue-100 font-semibold" >{element.label}</div>
+                <div className={`text-3xl ${!isOpen && "text-black"} text-white text-white hover:text-blue-100 font-semibold`} >{element.label}</div>
               </PrismicNextLink>
           </li>
         )
@@ -51,7 +51,7 @@ const NavBar = props => {
         navBarLinks.push(
           <li className="" key = {index}>
               <PrismicNextLink href={`/${element.link}`}>
-                <div className="text-3xl text-white text-white hover:text-blue-100 font-semibold">{element.label}</div>
+                <div className={`text-3xl ${!isOpen && "text-black"} text-white hover:text-blue-100 font-semibold`}>{element.label}</div>
               </PrismicNextLink>
           </li>
         )
@@ -63,10 +63,10 @@ const NavBar = props => {
   return (
     <div className="flex flex-col">
       <div>
-        <nav className="xl:mt-5 fixed flex inset-x-0 px-2 sm:px-4 xl:py-1 w-full xl:h-12 z-50">
+        <nav className={`xl:mt-5 fixed flex inset-x-0 px-2 sm:px-4 xl:py-1 w-full xl:h-12 z-50 transition-colors duration-1000 ease-in-out  ${!isOpen && "bg-white bg-opacity-90"}`}>
           <div className="flex xl:mt-0 mt-10">
             <PrismicNextLink href="/#home" className="">
-              <Image className="" src={logo} width={imageWidth} height={imageHeight} alt="GoEZ-Logo"/>
+              <Image className="" src={logo} width={imageWidth} height={imageHeight} alt="VICOSG-Logo"/>
             </PrismicNextLink>
           </div>
           <div className="padding container flex flex-wrap xl:justify-center justify-end items-start mx-auto">
@@ -82,7 +82,7 @@ const NavBar = props => {
                 {locales.map((locale) => (
                   <div className="" key={locale.id}>
                     <PrismicNextLink href={`/${locale.id}${router.pathname}`}>
-                      <div className="shadow-white xl:text-white text-white hover:text-blue-100 font-semibold pl-1 pr-1">
+                      <div className="xl:text-white text-black hover:text-blue-100 font-semibold pl-1 pr-1">
                       {locale.id === 'en-us' ? 'English' : locale.id === 'es-co' ? 'Español' : locale.id}
                       </div>
                     </PrismicNextLink>
