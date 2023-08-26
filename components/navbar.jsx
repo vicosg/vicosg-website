@@ -42,7 +42,7 @@ const NavBar = props => {
         navBarLinks.push(
           <li className="" key = {index}>
               <PrismicNextLink href={`${element.link}`}>
-                <div className={`text-3xl ${!isOpen && "text-black"} text-white text-white hover:text-blue-100 font-semibold`} >{element.label}</div>
+                <div className={`text-3xl xl:text-white text-black hover:text-blue-100 font-semibold`} >{element.label}</div>
               </PrismicNextLink>
           </li>
         )
@@ -51,7 +51,7 @@ const NavBar = props => {
         navBarLinks.push(
           <li className="" key = {index}>
               <PrismicNextLink href={`/${element.link}`}>
-                <div className={`text-3xl ${!isOpen && "text-black"} text-white hover:text-blue-100 font-semibold`}>{element.label}</div>
+                <div className={`text-3xl xl:text-white text-black hover:text-blue-100 font-semibold`}>{element.label}</div>
               </PrismicNextLink>
           </li>
         )
