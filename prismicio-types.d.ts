@@ -4,6 +4,24 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
+interface ContactSectionDocumentData {}
+
+/**
+ * Contact Section document from Prismic
+ *
+ * - **API ID**: `contact_section`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type ContactSectionDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<ContactSectionDocumentData>,
+    "contact_section",
+    Lang
+  >;
+
 /**
  * Content for General Information documents
  */
@@ -249,6 +267,7 @@ export type SeoDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<SeoDocumentData>, "seo", Lang>;
 
 export type AllDocumentTypes =
+  | ContactSectionDocument
   | GeneralInformationDocument
   | HomeSectionDocument
   | MenuDocument
@@ -264,6 +283,8 @@ declare module "@prismicio/client" {
 
   namespace Content {
     export type {
+      ContactSectionDocument,
+      ContactSectionDocumentData,
       GeneralInformationDocument,
       GeneralInformationDocumentData,
       HomeSectionDocument,

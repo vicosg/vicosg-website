@@ -1,0 +1,8 @@
+{
+  "id": "contact_section",
+  "label": "Contact Section",
+  "format": "custom",
+  "repeatable": false,
+  "status": true,
+  "json": { "Main": {} }
+}
