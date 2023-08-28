@@ -20,7 +20,10 @@ const HomeSection = props => {
           </div>
           <div className="xl:translate-y-0 translate-y-32 xl:mr-10 mr-2 pr-2 pl-2 h-12 xl:text-6xl text-5xl bg-[#ffb300] ml-auto text-right self-center font-extrabold hover:scale-110 transition duration-500">
             <div className="-translate-y-1 font-lato-black text-right">
-              {bottomText}
+              <PrismicNextLink href="/contact" className="float-right">
+                {bottomText}
+              </PrismicNextLink>
+              
             </div>
           </div>
       </div>

@@ -15,7 +15,7 @@ import { createClient } from "../prismicio"
 
 const Homepage = props => {
     
-  const { homeContent, rentContent, shareContent, aboutContent, contactContent, vehiclesContent, actualLocale, locales, seo, generalInformation, menuContent, signUpContent } = props
+  const { homeContent, footerContent, actualLocale, locales, seo, generalInformation, menuContent } = props
   return<div className="main overflow-x-hidden">
           <Head
             title={seo.data.title}
@@ -44,9 +44,10 @@ const Homepage = props => {
             />
             <FooterSection
               backgroundUrl={homeContent.data.background_image.url}
-              topText={homeContent.data.top_text}
-              bottomText={homeContent.data.bottom_text}
-              sloganText={homeContent.data.slogan_text}
+              text_one={footerContent.data.text_one}
+              text_two={footerContent.data.text_two}
+              text_three={footerContent.data.text_three}
+              text_four={footerContent.data.text_four}
               logo={generalInformation.data.small_logo.url}
               imageWidth={generalInformation.data.small_logo_width}
               imageHeight={generalInformation.data.small_logo_height}/>
@@ -62,6 +63,9 @@ const getStaticProps = async ({ params, locale, previewData }) => {
         generalInformation: await getPrismicData('general_information', locale),
         menuContent: await getPrismicData('menu', locale),
         homeContent: await getPrismicData('home_section',locale),
+        contactContent: await getPrismicData('contact_section',locale),
+        footerContent: await getPrismicData('footer_section',locale),
+
         locales: locales,
         actualLocale: locale
       }

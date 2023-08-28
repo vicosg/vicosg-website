@@ -4,7 +4,98 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
-interface ContactSectionDocumentData {}
+/**
+ * Content for Contact Section documents
+ */
+interface ContactSectionDocumentData {
+  /**
+   * Name Question field in *Contact Section*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact_section.name_question
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  name_question: prismic.KeyTextField;
+
+  /**
+   * Lastname Question field in *Contact Section*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact_section.lastname_question
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  lastname_question: prismic.KeyTextField;
+
+  /**
+   * Email Question field in *Contact Section*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact_section.email_question
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  email_question: prismic.KeyTextField;
+
+  /**
+   * Telephone Question field in *Contact Section*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact_section.telephone_question
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  telephone_question: prismic.KeyTextField;
+
+  /**
+   * Agree Text field in *Contact Section*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact_section.agree_text
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  agree_text: prismic.KeyTextField;
+
+  /**
+   * Previous Button Text field in *Contact Section*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact_section.previous_button_text
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  previous_button_text: prismic.KeyTextField;
+
+  /**
+   * Next Button Text field in *Contact Section*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact_section.next_button_text
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  next_button_text: prismic.KeyTextField;
+
+  /**
+   * Submit Button Text field in *Contact Section*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact_section.submit_button_text
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  submit_button_text: prismic.KeyTextField;
+}
 
 /**
  * Contact Section document from Prismic
@@ -16,9 +107,85 @@ interface ContactSectionDocumentData {}
  * @typeParam Lang - Language API ID of the document.
  */
 export type ContactSectionDocument<Lang extends string = string> =
-  prismic.PrismicDocumentWithoutUID<
+  prismic.PrismicDocumentWithUID<
     Simplify<ContactSectionDocumentData>,
     "contact_section",
+    Lang
+  >;
+
+/**
+ * Content for Footer Section documents
+ */
+interface FooterSectionDocumentData {
+  /**
+   * Text One field in *Footer Section*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer_section.text_one
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  text_one: prismic.KeyTextField;
+
+  /**
+   * Text Two field in *Footer Section*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer_section.text_two
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  text_two: prismic.KeyTextField;
+
+  /**
+   * Text Three field in *Footer Section*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer_section.text_three
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  text_three: prismic.KeyTextField;
+
+  /**
+   * Text Four field in *Footer Section*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer_section.text_four
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  text_four: prismic.KeyTextField;
+
+  /**
+   * Text Five field in *Footer Section*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer_section.text_five
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  text_five: prismic.KeyTextField;
+}
+
+/**
+ * Footer Section document from Prismic
+ *
+ * - **API ID**: `footer_section`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type FooterSectionDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<FooterSectionDocumentData>,
+    "footer_section",
     Lang
   >;
 
@@ -138,6 +305,60 @@ export type HomeSectionDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<
     Simplify<HomeSectionDocumentData>,
     "home_section",
+    Lang
+  >;
+
+/**
+ * Content for MealPlan Section documents
+ */
+interface MealplanSectionDocumentData {
+  /**
+   * Background Image field in *MealPlan Section*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: mealplan_section.background_image
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  background_image: prismic.ImageField<never>;
+
+  /**
+   * Title Text field in *MealPlan Section*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: mealplan_section.title_text
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title_text: prismic.KeyTextField;
+
+  /**
+   * Body Text field in *MealPlan Section*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: mealplan_section.body_text
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  body_text: prismic.KeyTextField;
+}
+
+/**
+ * MealPlan Section document from Prismic
+ *
+ * - **API ID**: `mealplan_section`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type MealplanSectionDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<MealplanSectionDocumentData>,
+    "mealplan_section",
     Lang
   >;
 
@@ -268,8 +489,10 @@ export type SeoDocument<Lang extends string = string> =
 
 export type AllDocumentTypes =
   | ContactSectionDocument
+  | FooterSectionDocument
   | GeneralInformationDocument
   | HomeSectionDocument
+  | MealplanSectionDocument
   | MenuDocument
   | SeoDocument;
 
@@ -285,10 +508,14 @@ declare module "@prismicio/client" {
     export type {
       ContactSectionDocument,
       ContactSectionDocumentData,
+      FooterSectionDocument,
+      FooterSectionDocumentData,
       GeneralInformationDocument,
       GeneralInformationDocumentData,
       HomeSectionDocument,
       HomeSectionDocumentData,
+      MealplanSectionDocument,
+      MealplanSectionDocumentData,
       MenuDocument,
       MenuDocumentData,
       SeoDocument,

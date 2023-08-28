@@ -6,10 +6,10 @@ const TypeformContact = (props) => {
 
   const [step, setStep] = useState(0);
   const [stepsData, setStepsData] = useState([
-    { id: "name", question: "Cuál es tu nombre?", value: "", completed: false },
-    { id: "lastname", question: "Cuál es tu apellido?", value: "", completed: false },
-    { id: "email", question: "Cuál es tu correo electrónico?", value: "", completed: false },
-    { id: "phone", question: "Cuál es tu número de teléfono?", value: "", completed: false },
+    { id: "name", type: "text", question: contactContent.data.name_question, value: "", completed: false },
+    { id: "lastname", type: "text", question: contactContent.data.lastname_question, value: "", completed: false },
+    { id: "email", type: "email", question: contactContent.data.email_question, value: "", completed: false },
+    { id: "phone", type: "tel", question: contactContent.data.telephone_question, value: "", completed: false },
   ]);
 
   const [status, setStatus] = useState({
@@ -103,7 +103,7 @@ const TypeformContact = (props) => {
             value={stepsData[step].value}
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             id={stepsData[step].id}
-            type="text"
+            type={stepsData[step].type}
             placeholder={stepsData[step].question}
           />
         </div>
@@ -119,8 +119,8 @@ const TypeformContact = (props) => {
                     className="custom-checkbox"
                   />
                 </div>
-                <div className="text-[#e56608ff] ml-2 text-justify">
-                  TEXTO PARA APROBAR
+                <div className="text-white ml-2 text-justify">
+                    {contactContent.data.agree_text}
                 </div>
               </div>
             </label>
@@ -132,33 +132,33 @@ const TypeformContact = (props) => {
               className="bg-gray-400 hover:bg-gray-500 text-white py-2 px-4 rounded focus:outline-none focus:shadow-outline"
               onClick={() => setStep(step - 1)}
             >
-              Anterior
+              {contactContent.data.previous_button_text}
             </button>
           )}
           {step < stepsData.length - 1 && (
             <button
               className={`${
                 stepsData[step].completed
-                  ? "bg-[#e56608ff] hover:bg-orange-600 text-white py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                  ? "bg-[#ffb300] hover:bg-orange-600 text-white py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                   : "bg-gray-400 text-white py-2 px-4 rounded cursor-not-allowed"
               }`}
               onClick={handleNextStep}
               disabled={!stepsData[step].completed}
             >
-              Siguiente
+              {contactContent.data.next_button_text}
             </button>
           )}
           {step === stepsData.length - 1 && (
             <button
               className={`${
                 status.checkboxApproved
-                  ? "bg-[#e56608ff] hover:bg-orange-600 text-white py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                  ? "bg-[#ffb300] hover:bg-orange-600 text-white py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                   : "bg-gray-400 text-white py-2 px-4 rounded cursor-not-allowed"
               }`}
               onClick={handleFinalSubmit}
               disabled={!status.checkboxApproved}
             >
-              Enviar
+              {contactContent.data.submit_button_text}
             </button>
           )}
         </div>

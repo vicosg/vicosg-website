@@ -7,12 +7,13 @@ import TypeformContact from "../typeformContact"
 
 const ContactSection = props => {
 
-  const { backgroundUrl, topText, bottomText, sloganText, logo, imageWidth, imageHeight} = props
+  const { backgroundUrl, ContactContent} = props
 
   return (
     <div id="contact" className="bg-cover bg-center h-screen bg-top" style={{ backgroundImage: `url(${backgroundUrl}`}}>
       <div className="flex flex-col w-full text-white justify-center h-screen">
-        <TypeformContact/> 
+        <TypeformContact
+            contactContent={ContactContent}/> 
       </div>
     </div>
   );

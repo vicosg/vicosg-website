@@ -4,5 +4,41 @@
   "format": "custom",
   "repeatable": false,
   "status": true,
-  "json": { "Main": {} }
+  "json": {
+    "Main": {
+      "uid": { "type": "UID", "config": { "label": "UID", "placeholder": "" } },
+      "name_question": {
+        "type": "Text",
+        "config": { "label": "Name Question", "placeholder": "" }
+      },
+      "lastname_question": {
+        "type": "Text",
+        "config": { "label": "Lastname Question", "placeholder": "" }
+      },
+      "email_question": {
+        "type": "Text",
+        "config": { "label": "Email Question", "placeholder": "" }
+      },
+      "telephone_question": {
+        "type": "Text",
+        "config": { "label": "Telephone Question", "placeholder": "" }
+      },
+      "agree_text": {
+        "type": "Text",
+        "config": { "label": "Agree Text", "placeholder": "" }
+      },
+      "previous_button_text": {
+        "type": "Text",
+        "config": { "label": "Previous Button Text", "placeholder": "" }
+      },
+      "next_button_text": {
+        "type": "Text",
+        "config": { "label": "Next Button Text", "placeholder": "" }
+      },
+      "submit_button_text": {
+        "type": "Text",
+        "config": { "label": "Submit Button Text", "placeholder": "" }
+      }
+    }
+  }
 }

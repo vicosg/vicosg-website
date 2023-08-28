@@ -1,0 +1,32 @@
+{
+  "id": "footer_section",
+  "label": "Footer Section",
+  "format": "custom",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": { "type": "UID", "config": { "label": "UID", "placeholder": "" } },
+      "text_one": {
+        "type": "Text",
+        "config": { "label": "Text One", "placeholder": "" }
+      },
+      "text_two": {
+        "type": "Text",
+        "config": { "label": "Text Two", "placeholder": "" }
+      },
+      "text_three": {
+        "type": "Text",
+        "config": { "label": "Text Three", "placeholder": "" }
+      },
+      "text_four": {
+        "type": "Text",
+        "config": { "label": "Text Four", "placeholder": "" }
+      },
+      "text_five": {
+        "type": "Text",
+        "config": { "label": "Text Five", "placeholder": "" }
+      }
+    }
+  }
+}

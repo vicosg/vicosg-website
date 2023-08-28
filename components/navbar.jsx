@@ -42,7 +42,7 @@ const NavBar = props => {
         navBarLinks.push(
           <li className="" key = {index}>
               <PrismicNextLink href={`${element.link}`}>
-                <div className={`text-3xl xl:text-white text-black hover:text-blue-100 font-semibold`} >{element.label}</div>
+                <div className={`text-3xl xl:text-white text-black hover:text-[#ffb300] hover:font-semibold `} >{element.label}</div>
               </PrismicNextLink>
           </li>
         )
@@ -51,7 +51,7 @@ const NavBar = props => {
         navBarLinks.push(
           <li className="" key = {index}>
               <PrismicNextLink href={`/${element.link}`}>
-                <div className={`text-3xl xl:text-white text-black hover:text-blue-100 font-semibold`}>{element.label}</div>
+                <div className={`text-3xl xl:text-white text-black hover:text-[#ffb300] hover:font-semibold `}>{element.label}</div>
               </PrismicNextLink>
           </li>
         )
@@ -82,7 +82,7 @@ const NavBar = props => {
                 {locales.map((locale) => (
                   <div className="" key={locale.id}>
                     <PrismicNextLink href={`/${locale.id}${router.pathname}`}>
-                      <div className="xl:text-white text-black hover:text-blue-100 font-semibold pl-1 pr-1">
+                      <div className="xl:text-white text-black hover:text-[#ffb300] hover:font-semibold pl-1 pr-1">
                       {locale.id === 'en-us' ? 'English' : locale.id === 'es-co' ? 'Español' : locale.id}
                       </div>
                     </PrismicNextLink>

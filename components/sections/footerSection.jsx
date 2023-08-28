@@ -1,12 +1,13 @@
 import React from "react";
 import { PrismicNextLink } from '@prismicio/next'
 import Image from "next/image"
+import { text } from "@fortawesome/fontawesome-svg-core";
 
 
 
 const FooterSection = props => {
 
-  const { backgroundUrl, topText, bottomText, sloganText, logo, imageWidth, imageHeight} = props
+  const { text_one, text_two, text_three, text_four, logo, imageWidth, imageHeight} = props
 
   return (
     <div id="footer" className="bg-cover bg-center h-auto bg-top bg-[#ffb300] pt-10 pb-10">
@@ -18,17 +19,18 @@ const FooterSection = props => {
           </div>
           <div className="font-trebuchet-bold-italic text-md text-center">
               
-© 2023 
+© 2023 Copyright.
+{text_one}
+{text_two}
 
-Copyright. VICOSG Online Coaching. All rights reserved.
 
           </div>
           <div className="text-md text-center">
-              Website Developed By
+          {text_three}
           </div>
           <div className="pr-5 pl-5 h-12 text-xl text-center self-center ">
             <div className="">
-              GLUONICO
+            {text_four}
             </div>
           </div>
       </div>

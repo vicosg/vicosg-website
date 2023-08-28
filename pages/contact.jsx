@@ -1,13 +1,9 @@
 import * as React from "react";
-import { useState } from "react";
 import Prismic from 'prismic-javascript'
 import { PrismicClient } from '../prismic-configuration'
 import { getLocales } from "../lib/getLocales";
 import { createClient } from "../prismicio"
-import TypeformContact from "../components/typeformContact"
 import FooterSection from "../components/sections/footerSection";
-
-
 
 // Components Importations Section 
 import Head from "../components/head";
@@ -16,8 +12,7 @@ import ContactSection from "../components/sections/contactSection";
 
 
 const Contact = (props) => {
-  const { homeContent, rentContent, shareContent, aboutContent, contactContent, vehiclesContent, actualLocale, locales, seo, generalInformation, menuContent, signUpContent } = props;
-
+  const { homeContent, contactContent, actualLocale, locales, seo, generalInformation, menuContent, footerContent } = props;
 
   return (
     <div className="main overflow-x-hidden">
@@ -38,12 +33,15 @@ const Contact = (props) => {
               sloganText={homeContent.data.slogan_text}
             />
             <ContactSection
-              backgroundUrl={homeContent.data.background_image.url}/>
+              backgroundUrl={homeContent.data.background_image.url}
+              ContactContent={contactContent}
+            />
             <FooterSection
               backgroundUrl={homeContent.data.background_image.url}
-              topText={homeContent.data.top_text}
-              bottomText={homeContent.data.bottom_text}
-              sloganText={homeContent.data.slogan_text}
+              text_one={footerContent.data.text_one}
+              text_two={footerContent.data.text_two}
+              text_three={footerContent.data.text_three}
+              text_four={footerContent.data.text_four}
               logo={generalInformation.data.small_logo.url}
               imageWidth={generalInformation.data.small_logo_width}
               imageHeight={generalInformation.data.small_logo_height}/>
@@ -60,6 +58,9 @@ const getStaticProps = async ({ params, locale, previewData }) => {
           generalInformation: await getPrismicData('general_information', locale),
           menuContent: await getPrismicData('menu', locale),
           homeContent: await getPrismicData('home_section',locale),
+          contactContent: await getPrismicData('contact_section',locale),
+          footerContent: await getPrismicData('footer_section',locale),
+
           locales: locales,
           actualLocale: locale
         }
