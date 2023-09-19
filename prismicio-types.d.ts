@@ -171,6 +171,116 @@ interface FooterSectionDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   text_five: prismic.KeyTextField;
+
+  /**
+   * Instagram Logo field in *Footer Section*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer_section.instagram_logo
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  instagram_logo: prismic.ImageField<never>;
+
+  /**
+   * Instagram Link field in *Footer Section*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer_section.instagram_link
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  instagram_link: prismic.LinkField;
+
+  /**
+   * Facebook Logo field in *Footer Section*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer_section.facebook_logo
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  facebook_logo: prismic.ImageField<never>;
+
+  /**
+   * Facebook Link field in *Footer Section*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer_section.facebook_link
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  facebook_link: prismic.LinkField;
+
+  /**
+   * TikTok Logo field in *Footer Section*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer_section.tiktok_logo
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  tiktok_logo: prismic.ImageField<never>;
+
+  /**
+   * TikTok Link field in *Footer Section*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer_section.tiktok_link
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  tiktok_link: prismic.LinkField;
+
+  /**
+   * Youtube Logo field in *Footer Section*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer_section.youtube_logo
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  youtube_logo: prismic.ImageField<never>;
+
+  /**
+   * YouTube Link field in *Footer Section*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer_section.youtube_link
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  youtube_link: prismic.LinkField;
+
+  /**
+   * Whatsapp Logo field in *Footer Section*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer_section.whatsapp_logo
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  whatsapp_logo: prismic.ImageField<never>;
+
+  /**
+   * Whatsapp Link field in *Footer Section*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer_section.whatsapp_link
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  whatsapp_link: prismic.LinkField;
 }
 
 /**

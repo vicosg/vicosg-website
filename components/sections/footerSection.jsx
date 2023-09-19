@@ -7,8 +7,7 @@ import { text } from "@fortawesome/fontawesome-svg-core";
 
 const FooterSection = props => {
 
-  const { text_one, text_two, text_three, text_four, logo, imageWidth, imageHeight} = props
-
+  const { content, logo, imageWidth, imageHeight} = props
   return (
     <div id="footer" className="bg-cover bg-center h-auto bg-top bg-[#ffb300] pt-10 pb-10">
       <div className="flex flex-col w-full text-white justify-center">
@@ -17,22 +16,66 @@ const FooterSection = props => {
                     <Image className="" src={logo} width={imageWidth} height={imageHeight} alt="VICOSG-Logo"/>
                 </PrismicNextLink>
           </div>
-          <div className="font-trebuchet-bold-italic text-md text-center">
-              
-© 2023 Copyright.
-{text_one}
-{text_two}
-
-
+          <div className="flex flex-row justify-center text-white font-semibold mb-5">
+            <PrismicNextLink href={`${content.instagram_link.url}`}>
+              <Image 
+                  className="mt-5 mr-1 ml-1 hover:scale-110 transition duration-500 cursor-pointer object-cover"
+                  src={content.instagram_logo.url}
+                  alt={content.instagram_logo.alt} 
+                  width={50}
+                  height={50}
+                />
+            </PrismicNextLink>
+            <PrismicNextLink href={`${content.facebook_link.url}`}>
+              <Image 
+                className="mt-5 mr-1 ml-1 hover:scale-110 transition duration-500 cursor-pointer object-cover"
+                src={content.facebook_logo.url}
+                alt={content.facebook_logo.alt} 
+                width={50}
+                height={50}
+              />
+            </PrismicNextLink>
+            <PrismicNextLink href={`${content.facebook_link.url}`}>
+              <Image 
+                className="mt-5 mr-1 ml-1 hover:scale-110 transition duration-500 cursor-pointer object-cover"
+                src={content.tiktok_logo.url}
+                alt={content.tiktok_logo.alt} 
+                width={50}
+                height={50}
+              />
+            </PrismicNextLink>
+            <PrismicNextLink href={`${content.facebook_link.url}`}>
+              <Image 
+                className="mt-5 mr-1 ml-1 hover:scale-110 transition duration-500 cursor-pointer object-cover"
+                src={content.youtube_logo.url}
+                alt={content.youtube_logo.alt} 
+                width={50}
+                height={50}
+              />
+            </PrismicNextLink>
+            <PrismicNextLink href={`${content.whatsapp_link.url}`}>
+              <Image 
+                className="mt-5 mr-1 ml-1 hover:scale-110 transition duration-500 cursor-pointer object-cover"
+                src={content.whatsapp_logo.url}
+                alt={content.whatsapp_logo.alt} 
+                width={50}
+                height={50}
+              />
+            </PrismicNextLink>
+        </div>
+        <div>
+          <div className="font-trebuchet-bold-italic text-md text-center self-center">
+            © 2023 Copyright. {content.text_one}{content.text_two}
           </div>
           <div className="text-md text-center">
-          {text_three}
+            {content.text_three}
           </div>
           <div className="pr-5 pl-5 h-12 text-xl text-center self-center ">
             <div className="">
-            {text_four}
+              {content.text_four}
             </div>
           </div>
+        </div>
       </div>
     </div>
   );

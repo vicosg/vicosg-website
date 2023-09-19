@@ -5,7 +5,7 @@ import Image from "next/image"
 
 const HomeSection = props => {
 
-  const { backgroundUrl, topText, bottomText, sloganText, logo, imageWidth, imageHeight} = props
+  const { backgroundUrl, topText, bottomText, logo, imageWidth, imageHeight, whatsappLogo, whatsappLink} = props
 
   return (
     <div id="home" className="bg-cover bg-center h-screen bg-top" style={{ backgroundImage: `url(${backgroundUrl}`}}>
@@ -23,8 +23,18 @@ const HomeSection = props => {
               <PrismicNextLink href="/contact" className="float-right">
                 {bottomText}
               </PrismicNextLink>
-              
             </div>
+          </div>
+          <div className="ml-auto pr-10 self-center xl:translate-y-0 translate-y-32">
+            <PrismicNextLink href={`${whatsappLink.url}`}>
+                <Image 
+                    className="mt-5 mr-1 ml-1 hover:scale-110 transition duration-500 cursor-pointer object-cover"
+                    src={whatsappLogo.url}
+                    alt={whatsappLogo.alt} 
+                    width={50}
+                    height={50}
+                  />
+              </PrismicNextLink>
           </div>
       </div>
     </div>

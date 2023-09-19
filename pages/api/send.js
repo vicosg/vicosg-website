@@ -10,9 +10,12 @@ export default async function(req, res) {
 
   const { name, lastname, email, phone, subject } = req.body
 
+  console.log("MIREMOS")
+  console.log(name)
+
   const content = {
-    to: 'goezrentalsllc@gmail.com',
-    from: 'goezrentalsllc@gmail.com',
+    to: 'vicosgvip@gmail.com',
+    from: 'vicosgvip@gmail.com',
     subject: `${subject}`,
     text: name,
     html: `<p> <b>${name}</b> <b>${lastname}</b> has requested to subscribe or needs more information.</p>
@@ -51,27 +54,28 @@ export default async function(req, res) {
 
   const ClientContent = {
     to: `${email}`,
-    from: 'goezrentalsllc@gmail.com',
-    subject: `${name}, you have a message from Go! EZ Rentals - We work 24/7!`,
+    from: 'vicosgvip@gmail.com',
+    subject: `${name}, you have a message from VICOSG Online Coaching`,
     text: name,
     html: `<p> <b>${name}</b>, you have requested to subscribe or you need more information about our services.</p>
-    <p> Thank you for reaching out and expressing interest in our services at <b>Go! EZ Rentals</b> </p>
+    <p> Thank you for reaching out and expressing interest in our services at <b>VICOSG</b> </p>
     <p> In case you would like to have more information, we are happy to arrange a call or text message for further queries you might have. </p> 
     <p> We look forward to start working with you! </p>
     <p> And remember, We work 24/7 for you! </p>
     `
   }
 
-  // Send message to Company (Go! EZ Rentals) and Client
+  // Send message to Company (VICOSG) and Client
   try {
-    console.log("Sending Go! EZ Rentals and Client Mails with SendGrid ...")
+    console.log(content)
+    console.log("Sending VICOSG and Client Mails with SendGrid ...")
     await sgMail.send(content)
     await sgClientMail.send(ClientContent)
-    res.status(200).send('Go! EZ Rentals & Client Message sent successfully.')
+    res.status(200).send('VICOSG & Client Message sent successfully.')
 
   } catch (error) {
     console.log("ERROR sending mails with SendGrid")
     console.log('ERROR', error)
-    res.status(400).send('Go! EZ Rentals and Client Messages not sent.')
+    res.status(400).send('VICOSG and Client Messages not sent.')
   }
 }

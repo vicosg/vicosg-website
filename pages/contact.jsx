@@ -37,11 +37,7 @@ const Contact = (props) => {
               ContactContent={contactContent}
             />
             <FooterSection
-              backgroundUrl={homeContent.data.background_image.url}
-              text_one={footerContent.data.text_one}
-              text_two={footerContent.data.text_two}
-              text_three={footerContent.data.text_three}
-              text_four={footerContent.data.text_four}
+              content={footerContent.data}
               logo={generalInformation.data.small_logo.url}
               imageWidth={generalInformation.data.small_logo_width}
               imageHeight={generalInformation.data.small_logo_height}/>

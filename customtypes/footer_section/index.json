@@ -26,6 +26,74 @@
       "text_five": {
         "type": "Text",
         "config": { "label": "Text Five", "placeholder": "" }
+      },
+      "instagram_logo": {
+        "type": "Image",
+        "config": {
+          "label": "Instagram Logo",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "instagram_link": {
+        "type": "Link",
+        "config": {
+          "label": "Instagram Link",
+          "placeholder": "",
+          "select": null
+        }
+      },
+      "facebook_logo": {
+        "type": "Image",
+        "config": {
+          "label": "Facebook Logo",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "facebook_link": {
+        "type": "Link",
+        "config": {
+          "label": "Facebook Link",
+          "placeholder": "",
+          "select": null
+        }
+      },
+      "tiktok_logo": {
+        "type": "Image",
+        "config": { "label": "TikTok Logo", "constraint": {}, "thumbnails": [] }
+      },
+      "tiktok_link": {
+        "type": "Link",
+        "config": { "label": "TikTok Link", "placeholder": "", "select": null }
+      },
+      "youtube_logo": {
+        "type": "Image",
+        "config": {
+          "label": "Youtube Logo",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "youtube_link": {
+        "type": "Link",
+        "config": { "label": "YouTube Link", "placeholder": "", "select": null }
+      },
+      "whatsapp_logo": {
+        "type": "Image",
+        "config": {
+          "label": "Whatsapp Logo",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "whatsapp_link": {
+        "type": "Link",
+        "config": {
+          "label": "Whatsapp Link",
+          "placeholder": "",
+          "select": null
+        }
       }
     }
   }

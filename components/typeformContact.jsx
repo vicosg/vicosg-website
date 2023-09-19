@@ -20,6 +20,7 @@ const TypeformContact = (props) => {
   });
 
   const handleResponse = (status, msg) => {
+    console.log(msg)
     if (status === 200) {
       console.log(msg);
       setStatus({
@@ -84,6 +85,7 @@ const TypeformContact = (props) => {
       },
       body: JSON.stringify(stepsData.map((stepData) => stepData.value)),
     });
+    console.log(res)
     const awaitedStatus = res.status;
     const text = await res.text();
     handleResponse(awaitedStatus, text);
