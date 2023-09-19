@@ -35,7 +35,7 @@ const FooterSection = props => {
                 height={50}
               />
             </PrismicNextLink>
-            <PrismicNextLink href={`${content.facebook_link.url}`}>
+            <PrismicNextLink href={`${content.tiktok_link.url}`}>
               <Image 
                 className="mt-5 mr-1 ml-1 hover:scale-110 transition duration-500 cursor-pointer object-cover"
                 src={content.tiktok_logo.url}
@@ -44,7 +44,7 @@ const FooterSection = props => {
                 height={50}
               />
             </PrismicNextLink>
-            <PrismicNextLink href={`${content.facebook_link.url}`}>
+            <PrismicNextLink href={`${content.youtube_link.url}`}>
               <Image 
                 className="mt-5 mr-1 ml-1 hover:scale-110 transition duration-500 cursor-pointer object-cover"
                 src={content.youtube_logo.url}
