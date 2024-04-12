@@ -8,7 +8,7 @@ export default async function(req, res) {
   sgMail.setApiKey(sengrid_api_key)
   sgClientMail.setApiKey(sengrid_api_key)
 
-  const { name, lastname, email, phone, subject } = req.body
+  const { name, lastname, email, phone } = req.body
 
   console.log("MIREMOS")
   console.log(name)
@@ -16,7 +16,7 @@ export default async function(req, res) {
   const content = {
     to: 'vicosgvip@gmail.com',
     from: 'vicosgvip@gmail.com',
-    subject: `${subject}`,
+    subject: `${name}, is interested in subscribing to a plan`,
     text: name,
     html: `<p> <b>${name}</b> <b>${lastname}</b> has requested to subscribe or needs more information.</p>
     <hr>
@@ -74,6 +74,7 @@ export default async function(req, res) {
     res.status(200).send('VICOSG & Client Message sent successfully.')
 
   } catch (error) {
+    console.log
     console.log("ERROR sending mails with SendGrid")
     console.log('ERROR', error)
     res.status(400).send('VICOSG and Client Messages not sent.')

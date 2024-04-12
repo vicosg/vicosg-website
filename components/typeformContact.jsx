@@ -78,12 +78,16 @@ const TypeformContact = (props) => {
     }
 
     setStatus((prevStatus) => ({ ...prevStatus, submitting: true }));
+    const formData = stepsData.reduce((acc, curr) => {
+      acc[curr.id] = curr.value;
+      return acc;
+    }, {});
     const res = await fetch("/api/send", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(stepsData.map((stepData) => stepData.value)),
+      body: JSON.stringify(formData),
     });
     console.log(res)
     const awaitedStatus = res.status;
