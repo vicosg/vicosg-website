@@ -95,6 +95,17 @@ interface ContactSectionDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   submit_button_text: prismic.KeyTextField;
+
+  /**
+   * Final Message Text field in *Contact Section*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact_section.final_message_text
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  final_message_text: prismic.KeyTextField;
 }
 
 /**
@@ -400,6 +411,28 @@ interface HomeSectionDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   slogan_text: prismic.KeyTextField;
+
+  /**
+   * Developer URL field in *Home Section*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home_section.developer_url
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  developer_url: prismic.KeyTextField;
+
+  /**
+   * Developer Phone field in *Home Section*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home_section.developer_phone
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  developer_phone: prismic.KeyTextField;
 }
 
 /**

@@ -38,6 +38,10 @@
       "submit_button_text": {
         "type": "Text",
         "config": { "label": "Submit Button Text", "placeholder": "" }
+      },
+      "final_message_text": {
+        "type": "Text",
+        "config": { "label": "Final Message Text", "placeholder": "" }
       }
     }
   }

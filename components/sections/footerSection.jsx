@@ -65,14 +65,17 @@ const FooterSection = props => {
         </div>
         <div>
           <div className="font-trebuchet-bold-italic text-md text-center self-center">
-            © 2023 Copyright. {content.text_one}{content.text_two}
+            © 2024 Copyright. {content.text_one}{content.text_two}
           </div>
           <div className="text-md text-center">
             {content.text_three}
           </div>
-          <div className="pr-5 pl-5 h-12 text-xl text-center self-center ">
-            <div className="">
-              {content.text_four}
+          <div className="pr-5 pl-5 h-12 text-xl text-center self-center flex flex-row justify-center">
+            <div className="mr-5 text-center self-center">
+              <a href="https://gluonico.com/" target="_blank">{content.text_four}</a>
+            </div>
+            <div className="text-center self-center">
+              <a href="tel:+573003943675">+573003943675</a>
             </div>
           </div>
         </div>

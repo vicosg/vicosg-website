@@ -1,10 +1,16 @@
 import * as React from "react";
 import { useState } from "react";
+import Select from 'react-select';
+import PhoneInput from 'react-phone-number-input';
+
+import 'react-phone-number-input/style.css'; // Importa los estilos CSS del paquete
+
 
 const TypeformContact = (props) => {
   const { contactContent } = props;
 
   const [step, setStep] = useState(0);
+  const [selectedCountry, setSelectedCountry] = useState(null);
   const [stepsData, setStepsData] = useState([
     { id: "name", type: "text", question: contactContent.data.name_question, value: "", completed: false },
     { id: "lastname", type: "text", question: contactContent.data.lastname_question, value: "", completed: false },
@@ -19,10 +25,10 @@ const TypeformContact = (props) => {
     checkboxApproved: false,
   });
 
+  const [formSubmitted, setFormSubmitted] = useState(false); // Nuevo estado para controlar si el formulario se ha enviado con éxito
+
   const handleResponse = (status, msg) => {
-    console.log(msg)
     if (status === 200) {
-      console.log(msg);
       setStatus({
         submitted: true,
         submitting: false,
@@ -33,9 +39,11 @@ const TypeformContact = (props) => {
         prevData.map((stepData) => ({ ...stepData, value: "", completed: false }))
       );
       setStep(0);
+      setFormSubmitted(true); // Establece el estado de formSubmitted como verdadero cuando se envía correctamente el formulario
+      setTimeout(() => {
+        setFormSubmitted(false); // Restablece el estado de formSubmitted después de un período de tiempo determinado
+      }, 5000); // Cambia 5000 por el número de milisegundos que deseas que el mensaje de "Gracias" permanezca visible
     } else {
-      console.log("ERROR");
-      console.log(msg);
       setStatus({
         info: { error: true, msg: msg },
         checkboxApproved: false,
@@ -43,9 +51,7 @@ const TypeformContact = (props) => {
     }
   };
 
-  const handleOnChange = (e) => {
-    e.persist();
-    const { id, value } = e.target;
+  const handleOnChange = (id, value) => {
     setStepsData((prevData) =>
       prevData.map((stepData) =>
         stepData.id === id ? { ...stepData, value: value, completed: value.trim() !== "" } : stepData
@@ -58,11 +64,10 @@ const TypeformContact = (props) => {
     });
   };
 
-  const handleCheckboxChange = (e) => {
-    const checkboxValue = e.target.checked;
+  const handleCheckboxChange = (newValue) => {
     setStatus((prevStatus) => ({
       ...prevStatus,
-      checkboxApproved: checkboxValue,
+      checkboxApproved: newValue,
     }));
   };
 
@@ -78,10 +83,13 @@ const TypeformContact = (props) => {
     }
 
     setStatus((prevStatus) => ({ ...prevStatus, submitting: true }));
-    const formData = stepsData.reduce((acc, curr) => {
-      acc[curr.id] = curr.value;
-      return acc;
-    }, {});
+    const formData = {
+      ...stepsData.reduce((acc, curr) => {
+        acc[curr.id] = curr.value;
+        return acc;
+      }, {}),
+      phone: selectedCountry ? `+${selectedCountry.value}${stepsData.find(step => step.id === 'phone').value}` : stepsData.find(step => step.id === 'phone').value
+    };
     const res = await fetch("/api/send", {
       method: "POST",
       headers: {
@@ -89,7 +97,6 @@ const TypeformContact = (props) => {
       },
       body: JSON.stringify(formData),
     });
-    console.log(res)
     const awaitedStatus = res.status;
     const text = await res.text();
     handleResponse(awaitedStatus, text);
@@ -103,15 +110,25 @@ const TypeformContact = (props) => {
             {stepsData[step].question}
           </p>
         </div>
-        <div className="mb-4">
-          <input
-            onChange={handleOnChange}
-            value={stepsData[step].value}
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            id={stepsData[step].id}
-            type={stepsData[step].type}
-            placeholder={stepsData[step].question}
-          />
+        <div className="mb-4 text-gray-700">
+          {step === 3 ? (
+            <PhoneInput
+              international
+              defaultCountry="US"
+              value={stepsData[step].value}
+              onChange={(value) => handleOnChange(stepsData[step].id, value)}
+              placeholder={stepsData[step].question}
+            />
+          ) : (
+            <input
+              onChange={(e) => handleOnChange(stepsData[step].id, e.target.value)}
+              value={stepsData[step].value}
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              id={stepsData[step].id}
+              type={stepsData[step].type}
+              placeholder={stepsData[step].question}
+            />
+          )}
         </div>
         {step === stepsData.length - 1 && (
           <div className="mb-4 text-left">
@@ -168,6 +185,11 @@ const TypeformContact = (props) => {
             </button>
           )}
         </div>
+        {formSubmitted && (
+          <div className="text-center mt-4 text-orange-600 font-bold">
+            {contactContent.data.final_message_text}
+          </div>
+        )}
       </div>
     </div>
   );

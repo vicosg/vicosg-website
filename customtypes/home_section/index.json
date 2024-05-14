@@ -26,6 +26,14 @@
       "slogan_text": {
         "type": "Text",
         "config": { "label": "Slogan Text", "placeholder": "" }
+      },
+      "developer_url": {
+        "type": "Text",
+        "config": { "label": "Developer URL", "placeholder": "" }
+      },
+      "developer_phone": {
+        "type": "Text",
+        "config": { "label": "Developer Phone", "placeholder": "" }
       }
     }
   }

@@ -10,9 +10,6 @@ export default async function(req, res) {
 
   const { name, lastname, email, phone } = req.body
 
-  console.log("MIREMOS")
-  console.log(name)
-
   const content = {
     to: 'vicosgvip@gmail.com',
     from: 'vicosgvip@gmail.com',
@@ -67,7 +64,6 @@ export default async function(req, res) {
 
   // Send message to Company (VICOSG) and Client
   try {
-    console.log(content)
     console.log("Sending VICOSG and Client Mails with SendGrid ...")
     await sgMail.send(content)
     await sgClientMail.send(ClientContent)

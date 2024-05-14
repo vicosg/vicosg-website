@@ -25,7 +25,7 @@ const HomeSection = props => {
               </PrismicNextLink>
             </div>
           </div>
-          <div className="ml-auto pr-10 self-center xl:translate-y-0 translate-y-32">
+          <div className="ml-auto pr-10 self-center xl:translate-y-0 translate-y-32 xl:scale-110">
             <PrismicNextLink href={`${whatsappLink.url}`}>
                 <Image 
                     className="mt-5 mr-1 ml-1 hover:scale-110 transition duration-500 cursor-pointer object-cover"
