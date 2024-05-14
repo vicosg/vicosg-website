@@ -1,6 +1,5 @@
 import * as React from "react";
 import { useState } from "react";
-import Select from 'react-select';
 import PhoneInput from 'react-phone-number-input';
 
 import 'react-phone-number-input/style.css'; // Importa los estilos CSS del paquete
